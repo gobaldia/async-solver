@@ -2,7 +2,7 @@
 
 ## Run
 
-Para correr el proyecto se debe ejecutar:
+Para correr el proyecto se debe ejecutar
 ```
 mvn spring-boot:run
 ```
