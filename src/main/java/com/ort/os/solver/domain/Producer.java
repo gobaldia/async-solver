@@ -1,29 +1,28 @@
 package com.ort.os.solver.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Producer extends Thread {
 
-    private int n;
-    private Buffer prodBuf;
+    private Buffer buffer;
+    private String tid;
 
-    public Producer(int m, Buffer buf) {
-        n = m;
-        prodBuf = buf;
+    public Producer(Buffer buffer, String tid) {
+        this.buffer = buffer;
+        this.tid = tid;
     }
 
     public void run() {
-        for (int i = 0; i < n; i++) {
+        CalculatorMemory calculatorMemory = CalculatorMemory.getInstance();
+        List<Equation> equations = calculatorMemory.getEquationsByTid(Long.parseLong(this.tid));
+        for (Equation e : equations) {
+            buffer.put(e);
+            System.out.println(" Productor: " + e);
             try {
-                Thread.sleep((int) Math.random() * 100);
-            } catch (InterruptedException e) {
-                return;
+                sleep(4000);
+            } catch (InterruptedException ex) {
             }
-
-            try {
-                prodBuf.put(i + 1);
-            } catch (InterruptedException e) {
-                return;
-            }
-
         }
     }
 }

@@ -1,29 +1,36 @@
 package com.ort.os.solver.domain;
 
+import java.util.HashMap;
+import java.util.List;
+
 public class Consumer extends Thread {
 
-    private int n;
-    private Buffer consBuf;
+    private Buffer buffer;
+    private String tid;
 
-    public Consumer(int m, Buffer buf) {
-        n = m;
-        consBuf = buf;
+    public Consumer(Buffer buffer, String tid) {
+        this.buffer=buffer;
+        this.tid = tid;
     }
-
-    public void run() {
-        int value;
-        for (int i = 0; i < n; i++) {
+    public void run(){
+        Equation equation;
+        CalculatorMemory calculatorMemory = CalculatorMemory.getInstance();
+        for(int i=0; i<1000; i++){
+            equation=buffer.get();
+            List<Double> coefficients = equation.getCoefficients();
+            List<Double> roots = PolynomialRoots.getRoots(coefficients);
+            Solution s = new Solution(roots);
             try {
-                value = consBuf.get();
+                calculatorMemory.insertSolution(Long.parseLong(this.tid), s);
+                HashMap<Long, List<Solution>> solutions = calculatorMemory.getSolutions();
+                System.out.println("Inserta: " + s);
             } catch (InterruptedException e) {
-                return;
+                e.printStackTrace();
             }
-            try {
-                Thread.sleep((int) Math.random() * 100);
-            } catch (InterruptedException e) {
-                return;
-            }
-
+            System.out.println(i+ " Consumidor: "+equation);
+            try{
+                sleep(1000);
+            }catch (InterruptedException e) { }
         }
     }
 }
