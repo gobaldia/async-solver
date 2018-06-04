@@ -12,7 +12,7 @@ public interface Solve {
             consumes = {"application/json"},
             produces = {"application/json"},
             method = RequestMethod.POST)
-    ResponseEntity createRule(@RequestHeader String tid, @RequestBody List<Equation> equations) throws InterruptedException;
+    ResponseEntity sendEquations(@RequestHeader String tid, @RequestBody List<Equation> equations) throws InterruptedException;
 
     @RequestMapping(value = "/solutions/{tid}",
         produces = {"application/json"},

@@ -18,7 +18,7 @@ public class Producer extends Thread {
         List<Equation> equations = calculatorMemory.getEquationsByTid(Long.parseLong(this.tid));
         for (Equation e : equations) {
             buffer.put(e);
-            System.out.println(" Productor: " + e);
+            System.out.println("Producte: " + e);
             try {
                 sleep(4000);
             } catch (InterruptedException ex) {

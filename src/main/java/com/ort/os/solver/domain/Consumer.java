@@ -15,7 +15,7 @@ public class Consumer extends Thread {
     public void run(){
         Equation equation;
         CalculatorMemory calculatorMemory = CalculatorMemory.getInstance();
-        for(int i=0; i<1000; i++){
+        while (true) {
             equation=buffer.get();
             List<Double> coefficients = equation.getCoefficients();
             List<Double> roots = PolynomialRoots.getRoots(coefficients);
@@ -27,7 +27,7 @@ public class Consumer extends Thread {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println(i+ " Consumidor: "+equation);
+//            System.out.println(i+ " Consumidor: "+equation);
             try{
                 sleep(1000);
             }catch (InterruptedException e) { }

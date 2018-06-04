@@ -14,7 +14,7 @@ import java.util.List;
 public class SolveController implements Solve {
 
     @Override
-    public ResponseEntity createRule(@RequestHeader String tid, @RequestBody List<Equation> equations) throws InterruptedException {
+    public ResponseEntity sendEquations(@RequestHeader String tid, @RequestBody List<Equation> equations) throws InterruptedException {
         CalculatorMemory instance = CalculatorMemory.getInstance();
         instance.insertEquations(Long.parseLong(tid), equations);
 
