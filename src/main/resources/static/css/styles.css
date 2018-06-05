@@ -1,0 +1,27 @@
+/*body {background-color: #d94c1a;}*/
+
+body {
+    background-color: #5bc8ac;
+    height: 100%;
+}
+
+p, h1, h4 {
+    font-family: 'Fredoka One', cursive;
+}
+
+.button {
+    border-radius: 8px;
+    background-color: #2c7873;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Fredoka One', cursive;
+}
+
+input, textarea {
+    font-family: 'Fredoka One', cursive;
+}

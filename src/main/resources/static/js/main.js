@@ -45,13 +45,21 @@ function pollSolutions() {
 
 function transformObjectToText(data) {
     var res = "";
-    console.log(JSON.stringify(data ));
+    console.log(JSON.stringify(data));
 
     if (data != "") {
         for (i = 0; i < data.length; i++) {
             solution = data[i]["roots"];
-            for (j = 0; j <solution.length; j++) {
-                res = res + " " + solution[j];
+            /*console.log("solution: " + solution);
+            if (solution = "") {
+                res = res + "No tiene raíces enteras";
+            }*/
+            if (solution.length == 0) {
+                res = res + "No tiene raíces enteras";
+            } else {
+                for (j = 0; j < solution.length; j++) {
+                    res = res + " " + solution[j];
+                }
             }
             res += "\n";
         }
