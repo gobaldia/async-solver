@@ -25,3 +25,11 @@ p, h1, h4 {
 input, textarea {
     font-family: 'Fredoka One', cursive;
 }
+
+.btn {
+    font-family: 'Fredoka One', cursive;
+}
+
+.modal-footer {
+    text-align: center;
+}
