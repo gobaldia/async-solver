@@ -4,12 +4,15 @@
 <head>
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <title>Restaurants</title>
+    <title>Raíces de polinomios</title>
 
 
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
     <script th:src="@{/js/main.js}" type="text/javascript"></script>
 
     <link th:href="@{/css/styles.css}" rel="stylesheet"/>
@@ -20,6 +23,39 @@
 
 </head>
 <body>
+
+<div class="modal" id="how-to">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Instrucciones</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p>
+                    Se deberán ingresar los coeficientes de los polinomios separados por un espacio. Del lado derecho es siempre 0.
+                    Cada ecuación ocupará una línea.<br>
+                    Un ejemplo es el siguiente:
+                </p>
+                <img th:src="@{/img/example.png}">
+                <p>
+                    Las ecuaciones del ejemplo anterior son:<br>
+                    0.5x+0=0, 4x-2=0 y x^4+8x^3+4x^2-48x+0=0 respectivamente.
+                </p>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Entendido</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 <h1>Calculadora de raíces de polinomios</h1>
 <div class="container">
     <div class="col-md-6">

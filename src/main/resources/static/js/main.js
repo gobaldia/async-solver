@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $('#how-to').modal({show:true});
     tid = 0;
 });
 
@@ -50,12 +51,8 @@ function transformObjectToText(data) {
     if (data != "") {
         for (i = 0; i < data.length; i++) {
             solution = data[i]["roots"];
-            /*console.log("solution: " + solution);
-            if (solution = "") {
-                res = res + "No tiene raíces enteras";
-            }*/
             if (solution.length == 0) {
-                res = res + "No tiene raíces enteras";
+                res = res + "No tiene raíces reales";
             } else {
                 for (j = 0; j < solution.length; j++) {
                     res = res + " " + solution[j];
