@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('#how-to').modal({show:true});
+    $('#how-to').modal({show: true});
     tid = 0;
 });
 

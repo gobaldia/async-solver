@@ -15,7 +15,7 @@ public interface Solve {
     ResponseEntity sendEquations(@RequestHeader String tid, @RequestBody List<Equation> equations) throws InterruptedException;
 
     @RequestMapping(value = "/solutions/{tid}",
-        produces = {"application/json"},
-    method = RequestMethod.GET)
+            produces = {"application/json"},
+            method = RequestMethod.GET)
     ResponseEntity getSolutions(@PathVariable String tid) throws InterruptedException;
 }

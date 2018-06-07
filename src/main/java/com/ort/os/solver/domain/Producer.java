@@ -1,6 +1,5 @@
 package com.ort.os.solver.domain;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Producer extends Thread {

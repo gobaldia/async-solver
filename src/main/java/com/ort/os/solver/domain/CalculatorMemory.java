@@ -1,12 +1,8 @@
 package com.ort.os.solver.domain;
 
-import javafx.util.Pair;
-
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class CalculatorMemory {
 
@@ -15,13 +11,13 @@ public class CalculatorMemory {
 
     private static CalculatorMemory instance = new CalculatorMemory();
 
-    public static CalculatorMemory getInstance() {
-        return instance;
-    }
-
     private CalculatorMemory() {
         this.equations = new HashMap<>();
         this.solutions = new HashMap<>();
+    }
+
+    public static CalculatorMemory getInstance() {
+        return instance;
     }
 
     public HashMap<Long, List<Equation>> getEquations() {
@@ -43,16 +39,13 @@ public class CalculatorMemory {
     }
 
     public void insertEquations(Long tid, List<Equation> equations) throws InterruptedException {
-//        Thread.sleep(5000);
         this.equations.put(tid, equations);
     }
 
     public void insertSolution(Long tid, Solution solution) throws InterruptedException {
-//        Thread.sleep(1000);
         if (this.solutions.get(tid) == null) {
             this.solutions.put(tid, new ArrayList<>());
         }
-//        solutions.add(solution);
         this.solutions.get(tid).add(solution);
     }
 }

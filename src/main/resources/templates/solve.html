@@ -1,14 +1,13 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <title>Raíces de polinomios</title>
 
-
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -18,8 +17,6 @@
     <link th:href="@{/css/styles.css}" rel="stylesheet"/>
 
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-
-    <!--<script th:inline="javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA3DdxEl0GSUT8q5H456mnun4X1sgEzIec&amp;sensor=false"></script>-->
 
 </head>
 <body>
@@ -36,7 +33,9 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <p>
-                    Se deberán ingresar los coeficientes de los polinomios separados por un espacio. Del lado derecho es siempre 0.
+                    Se deberán ingresar los coeficientes de los polinomios separados por un espacio,
+                    escribiendo primero el coeficiente de mayor grado y por ultimo el termino independiente.
+                    La ecuación siempre estará igualada a cero.<br>
                     Cada ecuación ocupará una línea.<br>
                     Un ejemplo es el siguiente:
                 </p>
@@ -60,12 +59,14 @@
 <div class="container">
     <div class="col-md-6">
         <h4>Ecuaciones</h4>
-        <textarea class="form-control" id="equations" name="equations" rows="15" style="background-color: #98dbac;"></textarea>
+        <textarea class="form-control" id="equations" name="equations" rows="15"
+                  style="background-color: #98dbac;"></textarea>
         <input type="submit" class="button" onclick="solve()" value="Calcular" title="Calcular">
     </div>
     <div class="col-md-6">
         <h4>Soluciones</h4>
-        <textarea readonly class="form-control" id="solutions" name="equations" rows="15"  style="background-color: #98dbac;"></textarea>
+        <textarea readonly class="form-control" id="solutions" name="equations" rows="15"
+                  style="background-color: #98dbac;"></textarea>
     </div>
 </div>
 
