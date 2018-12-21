@@ -1,4 +1,4 @@
-# Asynchornous Polynomial Roots Finder
+# Asynchronous Polynomial Roots Finder
 
 ## Run
 
